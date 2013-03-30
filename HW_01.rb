@@ -47,3 +47,57 @@
 #
 ###############################################################################
 
+#Developer: Kevin Tripp
+print "Weclome to my Secret Number Game!"
+
+first_name = "Kevin"
+last_name = "Tripp"
+
+print "This awesome game was created by " + first_name + " " + last_name + ".\n"
+
+puts "Who are you?\n"
+userName = gets
+userName = userName.chomp
+
+print "Do you want to play a game, " + userName + "?\n"
+puts "Yes or no?\n"
+playGame = gets.chomp
+
+def isCorrect(compterNum, userNum)
+	if(compterNum == userNum)
+		return true
+	else
+		return false
+	end
+end
+
+if playGame.downcase == "yes"
+	puts "Can you guess my number?\n"
+	userChoice = 0
+	secretNumber = rand(10..99)
+	print secretNumber
+	print userChoice
+
+	while !isCorrect(secretNumber, userChoice)
+		print "start while \n"
+		userChoice = gets.to_i
+		print secretNumber
+		print userChoice
+
+		if isCorrect(secretNumber, userChoice)
+					print secretNumber
+					print userChoice
+					print "if statement\n"
+					print "You guessed my number! It was #{secretNumber} Well done!\n"
+
+		else
+			print "else statement\n"
+			print secretNumber
+			print userChoice
+			puts "Try again!\n"
+		end
+	end
+else
+	print "I'm sorry to see you go!  I hope you come back soon.\n"
+end
+
