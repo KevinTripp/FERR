@@ -96,8 +96,8 @@ num_guesses.times do |count|
 	# gets the users guess
 	puts "count:#{count}\nnum_guesses: #{num_guesses}"
 
-	if count+1 == num_guesses && !is_secret_num(user_guess, secret_number)
-		# checks to see if the user has run out of guesses.  The minus one is to account for count starting at 0.
+	if count + 1 == num_guesses && !is_secret_num(user_guess, secret_number)
+		# checks to see if the user has run out of guesses and they haven't guess the number this round.  The plus one is to account for count starting at 0.
 		puts "#{messages[:lose]}#{messages[:answer]}"
 		break
 
