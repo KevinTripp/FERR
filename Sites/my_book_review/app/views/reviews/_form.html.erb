@@ -1,0 +1,29 @@
+<%= form_for(@review) do |f| %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+      <ul>
+      <% @review.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.select :user_id, options_from_collection_for_select(User.order("first_name collate NOCASE"), 'id',"first_name"), :include_blank => true %>
+  </div>
+  <div class="field">
+    <%= f.label :book_id %><br />
+    <%= f.select :book_id, options_from_collection_for_select(Book.order("title collate NOCASE"),'id','title'),  :include_blank => true  %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
