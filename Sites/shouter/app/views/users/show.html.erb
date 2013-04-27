@@ -17,7 +17,7 @@
 
 <p>
 	<% @user.shouts.each do |shout| %>
-		<p> <%= shout.content %> </p>
+		<p> <%= link_to shout.content, shout %> </p>
 	<% end %>
 </p>
 <%= link_to 'Edit', edit_user_path(@user) %> |
