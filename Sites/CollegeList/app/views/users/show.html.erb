@@ -1,0 +1,46 @@
+<div>
+ <%= link_to "create college", new_college_path %>
+</div>
+
+<div class ="colleges">
+  <% if @colleges.length > 0 %>
+    <% @colleges.each do |college| %>
+    <div>
+        
+      <span>
+        <b>Rank:</b>
+        <%= college.student_rank %>
+      </span>
+      
+      <span>
+        <b>Name:</b>
+        <%= link_to college.name, college_path(college.id) %>
+      </span>
+
+      <span>
+        <b>Due date:</b>
+        <%= college.due_date %>
+      </span>
+
+      <span>
+        <b>Steps:</b>
+        <%= college.steps %>
+      </span>
+
+      <span>
+        <b>Complete:</b>
+        <%= college.complete %>
+      </span>
+       
+      <span>
+        <b>Accepted:</b>
+        <%= college.accepted %>
+      </span>
+    </div>
+  <% end %>
+</div>
+
+<% else %>
+<p>You don't have any colleges yet, would you like to add one? <%= link_to "create college", new_college_path %></p>
+  <% end %>
+

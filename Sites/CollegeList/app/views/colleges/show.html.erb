@@ -1,0 +1,20 @@
+<h1> Here is what you have to do for <%= @college.name %>'s application.</h1>
+	<% @steps.each do |step| %>
+		<% @step = step %>
+		<div class = "college-steps">
+			<span class = "step name"><%= step.name %></span>
+			<span class = "step duedate"><%= step.duedate %></span>
+			<span>
+				<%= form_for (@step) do |f| %>
+						<span>Completed?</span>
+						<%= f.label :complete %>
+						<%= f.check_box :complete %>
+					<span class = "button">
+						<%= f.submit %>
+					</span>
+				<% end %>
+			</span>
+		</div>
+	<% end %>
+
+<%= link_to "Create step", new_step_path(:id => @college.id) %>
