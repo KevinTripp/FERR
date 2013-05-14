@@ -30,7 +30,7 @@ end
 
 gem 'uglifier', '>= 1.0.3'
 
-gem 'rack'
+gem 'heroku'
 
 gem 'jquery-rails'
 
