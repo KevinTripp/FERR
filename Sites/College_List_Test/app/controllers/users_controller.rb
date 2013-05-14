@@ -14,6 +14,8 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @colleges = College.where("user_id", @user.id).order("student_rank")
+
 
     respond_to do |format|
       format.html # show.html.erb
@@ -80,4 +82,5 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end

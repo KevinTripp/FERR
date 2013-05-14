@@ -8,9 +8,11 @@ class CreateColleges < ActiveRecord::Migration
       t.string :city
       t.string :state
       t.datetime :duedate
-      t.integer :steps
+      t.integer :num_steps
       t.boolean :complete
       t.boolean :accepted
+      t.integer :user_id
+      t.integer :student_rank
 
       t.timestamps
     end

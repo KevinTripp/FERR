@@ -44,6 +44,7 @@ class CollegesController < ApplicationController
 
     respond_to do |format|
       if @college.save
+        flash[:sucess] = "Welcome to college list!"
         format.html { redirect_to @college, notice: 'College was successfully created.' }
         format.json { render json: @college, status: :created, location: @college }
       else

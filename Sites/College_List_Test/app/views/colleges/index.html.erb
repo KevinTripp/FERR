@@ -3,13 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Address1</th>
-    <th>Address2</th>
-    <th>Zip</th>
-    <th>City</th>
-    <th>State</th>
     <th>Duedate</th>
-    <th>Steps</th>
     <th>Complete</th>
     <th>Accepted</th>
     <th></th>
@@ -20,13 +14,7 @@
 <% @colleges.each do |college| %>
   <tr>
     <td><%= college.name %></td>
-    <td><%= college.address1 %></td>
-    <td><%= college.address2 %></td>
-    <td><%= college.zip %></td>
-    <td><%= college.city %></td>
-    <td><%= college.state %></td>
     <td><%= college.duedate %></td>
-    <td><%= college.steps %></td>
     <td><%= college.complete %></td>
     <td><%= college.accepted %></td>
     <td><%= link_to 'Show', college %></td>

@@ -37,12 +37,9 @@
   </div>
   <div class="field">
     <%= f.label :duedate %><br />
-    <%= f.datetime_select :duedate %>
+    <%= f.date_select :duedate %>
   </div>
-  <div class="field">
-    <%= f.label :steps %><br />
-    <%= f.number_field :steps %>
-  </div>
+
   <div class="field">
     <%= f.label :complete %><br />
     <%= f.check_box :complete %>
@@ -51,7 +48,15 @@
     <%= f.label :accepted %><br />
     <%= f.check_box :accepted %>
   </div>
-  <div class="actions">
+   <div class="field">
+    <%= f.label :user %><br />
+    <%= f.select :user_id, options_from_collection_for_select(User.order("first_name collate NOCASE"),'id','first_name') %>
+  </div>
+    <div class="field">
+    <%= f.label :student_rank %><br />
+    <%= f.number_field :student_rank %>
+  </div>
+  <div class="actions btn-success">
     <%= f.submit %>
   </div>
 <% end %>

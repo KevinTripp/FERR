@@ -50,6 +50,21 @@
   <%= @user.allow_email %>
 </p>
 
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<table>
+  <tr>
+    <th>College Name</th>
+    <th>Address</th>
+    <th>duedate</th>
+    <th>complete</th>
+    <th>student_rank</th>
+  </tr>
+<% @colleges.each do |college| %>
+<tr>
+  <td><%= link_to college.name %></td>
+  <td><%= college.address1 %></td>
+  <td><%= college.duedate %></td>
+  <td><%= college.complete %></td>
+  <td><%= college.student_rank %></td>
+</tr>
+<% end %>
+</table>
