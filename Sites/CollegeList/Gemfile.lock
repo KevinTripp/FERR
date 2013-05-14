@@ -126,6 +126,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
   pg
+  rack
   rails (= 3.2.8)
   rspec-rails (~> 2.0)
   sass-rails (~> 3.2.3)
