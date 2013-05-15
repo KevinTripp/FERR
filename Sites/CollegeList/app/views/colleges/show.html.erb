@@ -6,11 +6,12 @@
 			<span class = "step duedate"><%= step.duedate %></span>
 			<span>
 				<%= form_for (@step) do |f| %>
-						<span>Completed?</span>
+					<span>Completed?
 						<%= f.label :complete %>
-						<%= f.check_box :complete %>
+						<%= f.check_box :complete, :id => "banana" %>
 					<span class = "button">
 						<%= f.submit %>
+					</span>
 					</span>
 				<% end %>
 			</span>

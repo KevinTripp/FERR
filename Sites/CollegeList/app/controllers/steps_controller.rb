@@ -17,10 +17,11 @@ class StepsController < ApplicationController
 	def update
 		@step = Step.find(params[:id])
 
-      if @step.update_attributes(params[:step])
+      	if @step.update_attributes(params[:step])
 			redirect_to college_path(:id => @step.college_id), :notice => "Step saved!"
 		else
 			render "new"
 		end
-	end
+	end 
+
 end	
