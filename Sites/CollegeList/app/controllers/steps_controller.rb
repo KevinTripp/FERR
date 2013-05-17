@@ -15,12 +15,12 @@ class StepsController < ApplicationController
 		end
 	end
 	def update
-		@step = Step.find(params[:id])
-
-      	if @step.update_attributes(params[:step])
-			redirect_to college_path(:id => @step.college_id), :notice => "Step saved!"
+		step = Step.find_by_id(params[:id])
+      	if step.update_attributes(params[:step])
+      		redirect_to college_path(:id => step.college_id), :flash => {:success => "Step was saved!"}
 		else
-			render "new"
+			Rails.logger.info(@step.errors.messages.inspect)
+			redirect_to college_path(:id => @step.college_id), :flash => {:error =>  "Step couldn't be saved!"}
 		end
 	end 
 
